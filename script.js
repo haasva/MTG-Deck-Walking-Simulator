@@ -691,6 +691,8 @@ function createTextInput() {
             textCont.remove();
             togglePointerLock();
             requestAnimationFrame(gameLoop);
+        } else {
+            textArea.placeholder = `You forgot to paste something -_-'`;
         }
 
     });

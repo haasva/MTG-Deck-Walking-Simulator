@@ -224,7 +224,7 @@
 #textCont {
     z-index: 3;
     border: 2px solid rgb(27, 27, 27);
-    background-image: url('/textures/montane.jpg');
+    background-image: url('./textures/montane.jpg');
     box-shadow: 0 0 50px rgba(0, 0, 0, 1);
     padding: 1rem;
     position: absolute;

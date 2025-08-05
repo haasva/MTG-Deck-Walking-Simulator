@@ -686,7 +686,7 @@ function createTextInput() {
 
         const deckListText = textArea.value;
         if (deckListText != '') {
-            await assignVegetationImages(deckListText);
+            await assignVegetationImages(deckListText, textCont);
             initRenderer();
             textCont.remove();
             togglePointerLock();
@@ -730,7 +730,13 @@ async function getCardImageUrls(decklist) {
     return imageUrls;
 }
 
-async function assignVegetationImages(decklistText) {
+async function assignVegetationImages(decklistText, textCont) {
+    textCont.innerHTML = '';
+        const loading = document.createElement('div');
+        loading.id = 'loading';
+        loading.textContent = 'Loading... May take ~20 sec.';
+        textCont.appendChild(loading);
+
     const imageUrls = await getCardImageUrls(decklistText);
 
     if (imageUrls.length === 0) {
@@ -738,12 +744,15 @@ async function assignVegetationImages(decklistText) {
         return;
     }
 
+    
+
     for (let y = 0; y < vegetationData.length; y++) {
         for (let x = 0; x < vegetationData[y].length; x++) {
             if (vegetationData[y][x] !== null) {
                 // change the array?
                 const randomIndex = Math.floor(Math.random() * imageUrls.length);
                 vegetationData[y][x] = imageUrls[randomIndex];
+
             }
         }
     }

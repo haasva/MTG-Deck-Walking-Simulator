@@ -241,6 +241,13 @@
     border-radius: 10px;
 }
 
+#textCont #loading {
+    font-size:xx-large;
+    color: orange;
+    background-color: black;
+    padding: 2rem;
+}
+
 #textCont #header {
     font-size:xx-large;
     color: orange;

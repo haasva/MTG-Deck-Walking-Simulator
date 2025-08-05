@@ -685,14 +685,14 @@ function createTextInput() {
         event.preventDefault();
 
         const deckListText = textArea.value;
-        if (textArea.value === '') {
-            return;
+        if (deckListText != '') {
+            await assignVegetationImages(deckListText);
+            initRenderer();
+            textCont.remove();
+            togglePointerLock();
+            requestAnimationFrame(gameLoop);
         }
-        await assignVegetationImages(deckListText);
-        initRenderer();
-        textCont.remove();
-        togglePointerLock();
-        requestAnimationFrame(gameLoop);
+
     });
 }
 

@@ -3,7 +3,7 @@
   font-family: Friz;
   font-style: normal;
   font-weight: normal;
-  src: url(Friz.ttf) format("truetype")
+  src: url('friz.ttf') format("truetype")
 }
 
 * {
